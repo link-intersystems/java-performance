@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>com.link-intersystems.performance</groupId>
-        <artifactId>java-performance</artifactId>
+        <artifactId>java-performance-comparision</artifactId>
         <version>1</version>
     </parent>
 
