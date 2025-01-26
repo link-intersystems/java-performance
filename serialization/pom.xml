@@ -84,6 +84,67 @@
                 </configuration>
             </plugin>
 
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>run-jmh</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>
+                            integration-test
+                        </phase>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>3.5.0</version>
+                    <executions>
+                        <execution>
+                            <id>run-jmh</id>
+                            <configuration>
+                                <executable>java</executable>
+                                <arguments>
+                                    <argument>-jar</argument>
+                                    <argument>${project.build.directory}/${uberjar.name}.jar</argument>
+
+                                    <!-- forks -->
+                                    <argument>-f</argument>
+                                    <argument>1</argument>
+
+                                    <!-- iterations -->
+                                    <argument>-i</argument>
+                                    <argument>2</argument>
+
+                                    <!-- iteration time in seconds -->
+                                    <argument>-r</argument>
+                                    <argument>5</argument>
+
+                                    <!-- warmup iterations -->
+                                    <argument>-wi</argument>
+                                    <argument>2</argument>
+
+                                    <!-- warmup iteration time in seconds -->
+                                    <argument>-w</argument>
+                                    <argument>5</argument>
+
+                                    <!-- verbose mode -->
+                                    <argument>-v</argument>
+                                    <argument>${jmh.verbose}</argument>
+                                </arguments>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>

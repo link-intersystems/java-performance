@@ -171,6 +171,10 @@
                                     <!-- warmup iteration time in seconds -->
                                     <argument>-w</argument>
                                     <argument>5</argument>
+
+                                    <!-- verbose mode -->
+                                    <argument>-v</argument>
+                                    <argument>${jmh.verbose}</argument>
                                 </arguments>
                             </configuration>
                         </execution>

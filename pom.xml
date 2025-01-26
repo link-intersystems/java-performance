@@ -23,6 +23,7 @@
         <junit-jupiter.version>5.10.2</junit-jupiter.version>
         <instancio-junit.version>5.3.0</instancio-junit.version>
         <slf4j.version>2.0.13</slf4j.version>
+        <jmh.verbose>NORMAL</jmh.verbose>
     </properties>
 
 
@@ -61,4 +62,14 @@
             <version>1.5.16</version>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>github</id>
+            <properties>
+                <jmh.verbose>SILENT</jmh.verbose>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>
