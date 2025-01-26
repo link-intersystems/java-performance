@@ -12,6 +12,7 @@
 
     <artifactId>java-performance-serialization</artifactId>
 
+
     <dependencies>
         <dependency>
             <groupId>com.link-intersystems.performance</groupId>
@@ -39,7 +40,6 @@
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
             <version>4.0.0</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
@@ -53,19 +53,9 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <id>add-source</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/jmh/java/</source>
-                            </sources>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -83,68 +73,24 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>benchmarks-jar</id>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <id>run-jmh</id>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <phase>
-                            integration-test
-                        </phase>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>3.5.0</version>
-                    <executions>
-                        <execution>
-                            <id>run-jmh</id>
-                            <configuration>
-                                <executable>java</executable>
-                                <arguments>
-                                    <argument>-jar</argument>
-                                    <argument>${project.build.directory}/${uberjar.name}.jar</argument>
-
-                                    <!-- forks -->
-                                    <argument>-f</argument>
-                                    <argument>1</argument>
-
-                                    <!-- iterations -->
-                                    <argument>-i</argument>
-                                    <argument>2</argument>
-
-                                    <!-- iteration time in seconds -->
-                                    <argument>-r</argument>
-                                    <argument>5</argument>
-
-                                    <!-- warmup iterations -->
-                                    <argument>-wi</argument>
-                                    <argument>2</argument>
-
-                                    <!-- warmup iteration time in seconds -->
-                                    <argument>-w</argument>
-                                    <argument>5</argument>
-
-                                    <!-- verbose mode -->
-                                    <argument>-v</argument>
-                                    <argument>${jmh.verbose}</argument>
-                                </arguments>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
     </build>
 </project>

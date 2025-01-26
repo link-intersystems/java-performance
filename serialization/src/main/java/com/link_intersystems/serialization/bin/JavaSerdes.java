@@ -20,7 +20,7 @@ public class JavaSerdes implements Serdes {
         try (ObjectInputStream oin = new ObjectInputStream(bin)) {
             return oin.readObject();
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
     }
 }

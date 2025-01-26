@@ -31,7 +31,7 @@ public class JaxbSerdes implements Serdes {
     public byte[] serialize(Object obj) throws IOException {
         try {
             ByteArrayOutputStream bout = new ByteArrayOutputStream();
-            JAXBElement<Customer> personElement = new JAXBElement<Customer>(new QName("person"), Customer.class, (Customer) obj);
+            JAXBElement<Customer> personElement = new JAXBElement<Customer>(new QName("customer"), Customer.class, (Customer) obj);
             marshaller.marshal(personElement, bout);
             return bout.toByteArray();
         } catch (JAXBException e) {
