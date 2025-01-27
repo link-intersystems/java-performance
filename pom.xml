@@ -13,6 +13,7 @@
         <module>test-models</module>
         <module>mapping</module>
         <module>serialization</module>
+        <module>event-sourcing</module>
     </modules>
 
     <properties>
@@ -178,11 +179,11 @@
 
                                     <!-- iteration time in seconds -->
                                     <argument>-r</argument>
-                                    <argument>1</argument>
+                                    <argument>2</argument>
 
                                     <!-- warmup iterations -->
                                     <argument>-wi</argument>
-                                    <argument>2</argument>
+                                    <argument>5</argument>
 
                                     <!-- warmup iteration time in seconds -->
                                     <argument>-w</argument>
