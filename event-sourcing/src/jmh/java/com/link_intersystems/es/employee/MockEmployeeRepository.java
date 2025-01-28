@@ -43,7 +43,6 @@ public class MockEmployeeRepository implements EmployeeRepository {
 
         events.add(new MoveEmployeeEvent(LocalDate.of(2012, 9, 1), employeeNumber, 5));
         events.add(new MoveEmployeeEvent(LocalDate.of(2014, 1, 1), employeeNumber, 4));
-
         events.add(new ChangeSalaryEvent(LocalDate.of(2014, 5, 1), employeeNumber, 3000));
         events.add(new ChangeEmploymentTitleEvent(LocalDate.of(2014, 5, 1), employeeNumber, "Web Developer"));
         events.add(new MoveEmployeeEvent(LocalDate.of(2016, 1, 1), employeeNumber, 10));
@@ -56,6 +55,7 @@ public class MockEmployeeRepository implements EmployeeRepository {
         events.add(new ChangeSalaryEvent(LocalDate.of(2020, 7, 1), employeeNumber, 5000));
         events.add(new RenameEmployeeEvent(LocalDate.of(2022, 3, 13), employeeNumber, firstName, lastnames().get()));
         events.add(new MoveEmployeeEvent(LocalDate.of(2022, 9, 1), employeeNumber, 12));
+
         events.add(new QuitEvent(LocalDate.of(2024, 4, 1), employeeNumber));
 
         return events;

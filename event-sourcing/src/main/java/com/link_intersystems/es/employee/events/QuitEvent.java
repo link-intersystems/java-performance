@@ -3,7 +3,6 @@ package com.link_intersystems.es.employee.events;
 import java.time.LocalDate;
 
 public class QuitEvent extends EmployeeEvent {
-    private int employeeNumber;
 
     public QuitEvent(LocalDate eventDate, int employeeNumber) {
         super(eventDate, employeeNumber);
