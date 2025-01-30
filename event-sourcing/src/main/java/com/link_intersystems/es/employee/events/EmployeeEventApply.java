@@ -1,6 +1,6 @@
 package com.link_intersystems.es.employee.events;
 
-import com.link_intersystems.es.Employee;
+import com.link_intersystems.es.employee.Employee;
 
 import java.util.List;
 

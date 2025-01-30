@@ -1,4 +1,4 @@
-package com.link_intersystems.es;
+package com.link_intersystems.es.employee;
 
 public interface EmployeeRepository {
 

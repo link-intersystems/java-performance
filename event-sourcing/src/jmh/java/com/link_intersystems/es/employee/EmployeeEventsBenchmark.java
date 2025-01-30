@@ -1,7 +1,5 @@
 package com.link_intersystems.es.employee;
 
-import com.link_intersystems.es.Employee;
-import com.link_intersystems.es.EmployeeRepository;
 import org.openjdk.jmh.annotations.*;
 
 import java.util.Random;

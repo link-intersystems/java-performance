@@ -1,4 +1,4 @@
-package com.link_intersystems.es;
+package com.link_intersystems.es.employee;
 
 import com.link_intersystems.es.employee.events.*;
 

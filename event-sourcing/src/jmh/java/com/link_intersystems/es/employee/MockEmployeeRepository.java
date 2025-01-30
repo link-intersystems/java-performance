@@ -1,8 +1,5 @@
 package com.link_intersystems.es.employee;
 
-import com.link_intersystems.es.Employee;
-import com.link_intersystems.es.EmployeeCreator;
-import com.link_intersystems.es.EmployeeRepository;
 import com.link_intersystems.es.employee.events.*;
 
 import java.time.LocalDate;
