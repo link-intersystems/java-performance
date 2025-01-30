@@ -9,7 +9,7 @@
         <version>1</version>
     </parent>
 
-    <artifactId>event-sourcing</artifactId>
+    <artifactId>java-performance-event-sourcing</artifactId>
 
     <dependencies>
         <dependency>
