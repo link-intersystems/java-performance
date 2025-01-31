@@ -1,6 +1,6 @@
 package com.link_intersystems.es.employee;
 
-import com.link_intersystems.es.employee.events.Gender;
+import com.link_intersystems.es.employee.event.Gender;
 
 import java.text.MessageFormat;
 import java.time.LocalDate;

@@ -1,6 +1,6 @@
 package com.link_intersystems.es.employee;
 
-import com.link_intersystems.es.employee.events.*;
+import com.link_intersystems.es.employee.event.*;
 
 public class EmployeeCreator extends EmployeeEventApply {
 

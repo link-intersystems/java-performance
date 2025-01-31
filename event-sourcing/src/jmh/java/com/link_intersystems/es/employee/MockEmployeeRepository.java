@@ -1,12 +1,12 @@
 package com.link_intersystems.es.employee;
 
-import com.link_intersystems.es.employee.events.*;
+import com.link_intersystems.es.employee.event.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.link_intersystems.es.employee.events.Gender.FEMALE;
+import static com.link_intersystems.es.employee.event.Gender.FEMALE;
 import static com.link_intersystems.model.TestDataGen.firstnames;
 import static com.link_intersystems.model.TestDataGen.lastnames;
 
