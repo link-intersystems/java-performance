@@ -1,8 +1,9 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="event-sourcing-benchmarks" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="org.openjdk.jmh.Main" />
-    <module name="java-performance-event-sourcing" />
+    <module name="java-jmh.event-sourcing.jmh" />
     <option name="PROGRAM_PARAMETERS" value="-f 1 -i 2 -r 5 -wi 2 -w 5" />
+    <option name="VM_PARAMETERS" value="--sun-misc-unsafe-memory-access=allow" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

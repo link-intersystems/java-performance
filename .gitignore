@@ -1,4 +1,7 @@
 **/target/
+**/build/
+**/.gradle/
+**/.kotlin/
 .project
 .classpath
 .settings
