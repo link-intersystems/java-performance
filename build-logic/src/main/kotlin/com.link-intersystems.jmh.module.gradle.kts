@@ -21,4 +21,9 @@ dependencies {
 
 jmh {
     jvmArgs = listOf("--sun-misc-unsafe-memory-access=allow")
+    fork = 1
+    warmupIterations = 2
+    iterations = 2
+    timeOnIteration = "5s"
+
 }

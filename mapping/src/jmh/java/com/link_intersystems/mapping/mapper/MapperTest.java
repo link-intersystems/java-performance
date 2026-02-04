@@ -6,6 +6,7 @@ import com.link_intersystems.model.person.Person;
 import com.link_intersystems.model.person.PersonDto;
 import org.openjdk.jmh.annotations.*;
 
+import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
 public abstract class MapperTest {
@@ -33,6 +34,9 @@ public abstract class MapperTest {
     protected abstract PersonMapper createMapper() throws Exception;
 
     @Benchmark
+    @Fork(value = 1, warmups = 1)
+    @Measurement(iterations = 2, time = 5, timeUnit = TimeUnit.SECONDS)
+    @Warmup(iterations = 2)
     public PersonDto map(MapperState mapperState) throws Exception {
         return mapperState.personMapper.toDto(mapperState.person);
     }
