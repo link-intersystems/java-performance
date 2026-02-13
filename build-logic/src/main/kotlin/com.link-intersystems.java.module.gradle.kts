@@ -12,7 +12,7 @@ java {
         // Cannot find a Java installation on your machine (Linux 6.11.0-1014-azure amd64) matching:
         // {languageVersion=22, vendor=any vendor, implementation=vendor-specific, nativeImageCapable=false}.
         // Toolchain download repositories have not been configured.
-        languageVersion.set(JavaLanguageVersion.of(24))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
