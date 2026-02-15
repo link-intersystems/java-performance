@@ -1,6 +1,5 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="JavaMapperTest" type="jmh-id" vm-parameters="--sun-misc-unsafe-memory-access=allow" program-parameters="com.link_intersystems.mapping.mapper.java.JavaMapperTest.*" working-dir="$MODULE_WORKING_DIR$" benchmark-type="CLASS" benchmark-class="com.link_intersystems.mapping.mapper.java.JavaMapperTest" isAlternativeJrePathEnabled="false">
-    <module name="java-jmh.mapping.jmh" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

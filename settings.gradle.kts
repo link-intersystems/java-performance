@@ -4,7 +4,7 @@ import com.link_intersystems.gradle.project.plugin.ProjectNamingStrategy
 import java.nio.file.Path
 import java.util.function.Predicate
 
-rootProject.name = "java-jmh"
+rootProject.name = "java-performance"
 
 dependencyResolutionManagement {
     repositories {

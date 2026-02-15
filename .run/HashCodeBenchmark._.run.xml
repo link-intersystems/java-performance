@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="HashCodeBenchmark.*" type="jmh-id" program-parameters="com.link_intersystems.lang.HashCodeBenchmark.*" working-dir="$MODULE_WORKING_DIR$" benchmark-type="CLASS" benchmark-class="com.link_intersystems.lang.HashCodeBenchmark" isAlternativeJrePathEnabled="false">
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
