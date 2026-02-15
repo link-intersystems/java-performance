@@ -5,7 +5,7 @@ plugins {
 
 dependencies {
     implementation(project(":test-models"))
-    implementation("ch.qos.logback:logback-classic:1.5.16")
+    implementation("ch.qos.logback:logback-classic:1.5.30")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.2")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:6.0.2")
