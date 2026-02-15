@@ -11,9 +11,20 @@ import java.util.Optional;
 
 /**
  * Run with java -Dfile.encoding=UTF-8 in a shell that supports UTF-8.
+ * <p>
+ * You can also use the chess-app scripts in this project.
  */
 public class ChessApp {
     public static void main(String[] args) {
+
+        System.out.println("""
+                When running this application you must ensure that your terminal supports UTF-8!
+                
+                On Windows CMD: chcp 65001
+                On Linux: export LANG=en_US.UTF-8
+                """);
+
+        pressEnterToContinue();
 
         int gameId = 1;
         if (args.length > 0) {
@@ -50,6 +61,14 @@ public class ChessApp {
 
         });
 
+    }
+
+    private static void pressEnterToContinue() {
+        System.out.println("Press Enter key to continue...");
+        try {
+            System.in.read();
+        } catch (Exception e) {
+        }
     }
 
     private static void sleep() {
