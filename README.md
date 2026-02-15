@@ -9,8 +9,8 @@ Everything else is not professional.
 
 Thus, I always go through 4 steps when dealing with performance issues:
 **Measure -> Analyse -> Improve -> Measure again**.
-Besides these steps, you also have to make sure that no other actions that infer with your tests and
-make your measurements inaccurate.
+Besides these steps, you also have to make sure that there are no other actions 
+that infer with your tests and make your measurements inaccurate.
 
 I created this repository to
 
