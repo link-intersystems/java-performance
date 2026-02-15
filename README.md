@@ -41,6 +41,8 @@ Run the benchmark archives with other options:
 java -jar mapping/build/libs/java-performance-mapping-0.0.1-SNAPSHOT-jmh.jar -f 1 -i 2 -r 5 -wi 2 -w 5
 ```
 
+For details take a look at the [JMH documentation](https://github.com/openjdk/jmh)
+
 ### IntelliJ IDEA
 
 Run configurations are stored in the root directory `.run`. So
