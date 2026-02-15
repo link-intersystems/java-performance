@@ -11,7 +11,8 @@ import java.util.regex.Pattern;
 
 public class AsciiBoard {
 
-    public static final String PLAIN_BOARD = """
+    public static final int COLUMN_COUNT = 8;
+    public static final String INITIAL_BOARD = """
             ╔═╤══╤══╤══╤══╤══╤══╤══╤══╤═╗
             ║ │A │B │C │D │E │F │G │H │ ║
             ╟─┼──┼──┼──┼──┼──┼──┼──┼──┼─╢
@@ -36,8 +37,8 @@ public class AsciiBoard {
             """;
     public static final String THIN_SPACE = "\u2009";
 
-    private Pattern cellDevider = Pattern.compile("│[^A-H0-8│]+│");
-    private String asciiBoard = PLAIN_BOARD;;
+    private final Pattern cellDivider = Pattern.compile("│[^A-H0-8│]+│");
+    private String asciiBoard = INITIAL_BOARD;
 
     public void set(Board.Row row, Board.Column column, Piece piece) {
         int rowIndex = row.ordinal();
@@ -47,9 +48,16 @@ public class AsciiBoard {
     }
 
     private void setCell(int rowIndex, int columnIndex, Piece piece) {
-        int cellIndex = rowIndex + (columnIndex * 8);
+        BoundedRange<Integer> cellRange = findCellRange(rowIndex, columnIndex);
+        String before = asciiBoard.substring(0, cellRange.lowerBound() + 1);
+        String after = asciiBoard.substring(cellRange.upperBound() - 1);
+        asciiBoard = before + toAscii(piece) + THIN_SPACE + after;
+    }
 
-        Matcher matcher = cellDevider.matcher(asciiBoard);
+    private BoundedRange<Integer> findCellRange(int rowIndex, int columnIndex) {
+        int cellIndex = rowIndex + (columnIndex * COLUMN_COUNT);
+
+        Matcher matcher = cellDivider.matcher(asciiBoard);
         int nextSearchIndex = 0;
         for (int i = 0; i <= cellIndex; i++) {
             if (matcher.find(nextSearchIndex)) {
@@ -57,9 +65,8 @@ public class AsciiBoard {
             }
         }
         int start = matcher.start();
-        String before = asciiBoard.substring(0, start + 1);
-        String after = asciiBoard.substring(matcher.end() - 1);
-        asciiBoard = before + toAscii(piece) + THIN_SPACE + after;
+        int end = matcher.end();
+        return new BoundedRange<>(start, end);
     }
 
     private String toAscii(Piece piece) {
@@ -97,7 +104,7 @@ public class AsciiBoard {
     }
 
     public void apply(Board board) {
-        asciiBoard = PLAIN_BOARD;
+        asciiBoard = INITIAL_BOARD;
         Arrays.stream(Board.Row.values()).forEach(row -> {
             Arrays.stream(Board.Column.values()).forEach(column -> {
                 Optional<Piece> field = board.getPiece(row, column);

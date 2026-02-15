@@ -14,6 +14,7 @@ import java.util.Optional;
  */
 public class ChessApp {
     public static void main(String[] args) {
+
         int gameId = 1;
         if (args.length > 0) {
             gameId = Integer.parseInt(args[0]);
@@ -58,8 +59,4 @@ public class ChessApp {
             throw new RuntimeException(e);
         }
     }
-
-
-
-
 }
