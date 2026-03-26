@@ -139,6 +139,7 @@ public class FileWalkBenchmark {
                 return FileVisitResult.CONTINUE;
             }
 
+
             public long getSize() {
                 return size;
             }
